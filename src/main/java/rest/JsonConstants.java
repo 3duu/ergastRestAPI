@@ -1,0 +1,77 @@
+package rest;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class JsonConstants {
+
+	public final static String MR_DATA = "MRData";
+	public final static String URL = "url";
+	public final static String SEASON_TABLE = "SeasonTable";
+	public final static String SEASON = "season";
+	public final static String SEASONS = "Seasons";
+	public final static String TOTAL = "total";
+	public final static String RACE_TABLE = "RaceTable";
+	public final static String RACES = "Races";
+	public final static String ROUND = "round";
+	public final static String RACE_NAME = "raceName";
+	public final static String CIRCUIT = "Circuit";
+	public final static String CIRCUIT_ID = "circuitId";
+	public final static String CIRCUIT_NAME = "circuitName";
+	public final static String LOCATION = "Location";
+	public final static String LAT = "lat";
+	public final static String LONG = "long";
+	public final static String LOCALITY = "locality";
+	public final static String COUNTRY = "country";
+	public final static String TIME = "time";
+	public final static String DATE = "date";
+	public final static String QUALIFYING_RESULTS= "QualifyingResults";
+	public final static String NUMBER = "number";
+	public final static String POSITION = "position";
+	public final static String CONSTRUCTOR_ID = "constructorId";
+	public final static String DRIVER = "Driver";
+	public final static String DRIVER_ID ="driverId";
+	public final static String GIVEN_NAME = "givenName";
+	public final static String FAMILY_NAME = "familyName";
+	public final static String DATE_OF_BIRTH = "dateOfBirth";
+	public final static String NATIONALITY = "nationality";
+	public final static String NAME = "name";
+	public final static String CONSTRUCTOR_TABLE = "ConstructorTable";
+	public final static String CONSTRUCTORS = "Constructors";
+	public final static String TIMINGS = "Timings";
+	public final static String LAPS = "Laps";
+	public final static String CONSTRUCTOR= "Constructor";
+	public final static String Q1 = "Q1";
+	public final static String Q2 = "Q2";
+	public final static String Q3 = "Q3";
+	public final static String STANDINGS_TABLE = "StandingsTable";
+	public final static String STANDINGS_LIST = "StandingsLists";
+	public final static String DRIVER_STANDINGS = "DriverStandings";
+	public final static String CONSTRUCTOR_STANDINGS = "ConstructorStandings";
+	public final static String POINTS = "points";
+	public final static String WINS = "wins";
+	public final static String CIRCUIT_TABLE = "CircuitTable";
+	public final static String CIRCUITS = "Circuits";
+	public final static String LAP = "lap";
+	public final static String STOP = "stop";
+	public final static String DURATION = "duration";
+	public final static String PIT_STOPS= "PitStops";
+	public final static String SPEED = "speed";
+	public final static String RANK = "rank";
+	public final static String MILLIS = "millis";
+	public final static String UNITS = "units";
+	public final static String POSITION_TEXT = "positionText";
+	public final static String GRID = "grid";
+	public final static String STATUS = "status";
+	public final static String FASTEST_LAP = "FastestLap";
+	public final static String TIME_CAPS = "Time";
+	public final static String AVERAGE_SPEED = "AverageSpeed";
+	public final static String DRIVER_TABLE = "DriverTable";
+	public final static String DRIVERS = "Drivers";
+	public final static String LAPS_LOW = "laps";
+	public final static String STATUS_ID = "statusId";
+	public final static String COUNT = "count";
+	public final static String STATUS_TABLE = "StatusTable";
+	public final static String STATUS_CAPS = "Status";
+	public final static String RESULTS = "Results";
+}
