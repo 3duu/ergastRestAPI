@@ -3,10 +3,15 @@ package rest.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
@@ -36,30 +41,29 @@ public class ErgastController {
     	return rateResponse.getBody();
     }
     
-    private void handleError(Exception e) {
+    private HttpStatus handleError(Exception e) {
 
-    	if(e instanceof HttpStatusCodeException) {
-    		if(e instanceof HttpClientErrorException) {
-    			logger.error("Não há resultados para os parametros de entrada");
-        	}
-    		else if(e instanceof HttpServerErrorException) {
-    			logger.error("Houve um erro ao executar a operação");
-        	}
+		if(e instanceof HttpClientErrorException) {
+			logger.error("Não há resultados para os parametros de entrada");
+			return HttpStatus.NOT_FOUND;
     	}
-    	else {
-    		logger.error("Erro inesperado");
+		else{
+			logger.error("Houve um erro ao executar a operação");
+			return HttpStatus.SERVICE_UNAVAILABLE;
     	}
     }
     
-    public RaceTable getRaceTable() {
-    	Result result = null;
+	@GetMapping(value="/racetable", produces=MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<RaceTable> getRaceTable(@RequestParam String season) {
+		
+    	ResponseEntity<RaceTable> raceTable;
     	try {
-    		result = getResult();
+    		raceTable = new ResponseEntity<RaceTable>(getResult().getMrData().getRaceTable(), HttpStatus.OK);
     	}
     	catch(Exception e) {
-    		handleError(e);
+    		raceTable = new ResponseEntity<RaceTable>(handleError(e));
     	}
     	
-    	return result != null ? result.getMrData().getRaceTable() : new RaceTable();
+    	return raceTable;
     }
 }
