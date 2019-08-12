@@ -6,19 +6,19 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class DriverTable implements Serializable {
+public class ConstructorTable implements Serializable {
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	private String round;
 	
-	@JsonProperty("Drivers")
-    private Driver[] drivers;
+	private String round;
 
     private String season;
+    
+    @JsonProperty("Constructors")
+    private Constructor[] constructors;
 
     public String getRound ()
     {
@@ -28,16 +28,6 @@ public class DriverTable implements Serializable {
     public void setRound (String round)
     {
         this.round = round;
-    }
-
-    public Driver[] getDrivers ()
-    {
-        return drivers;
-    }
-
-    public void setDrivers (Driver[] drivers)
-    {
-        this.drivers = drivers;
     }
 
     public String getSeason ()
@@ -50,9 +40,20 @@ public class DriverTable implements Serializable {
         this.season = season;
     }
 
+    public Constructor[] getConstructors ()
+    {
+        return constructors;
+    }
+
+    public void setConstructors (Constructor[] constructors)
+    {
+        this.constructors = constructors;
+    }
+
     @Override
     public String toString()
     {
-        return "[round = "+round+", Drivers = "+drivers+", season = "+season+"]";
+        return "[round = "+round+", season = "+season+", Constructors = "+constructors+"]";
     }
+
 }

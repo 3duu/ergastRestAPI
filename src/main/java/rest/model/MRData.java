@@ -15,6 +15,9 @@ public class MRData {
 	@JsonProperty("CircuitTable")
 	private CircuitTable circuitTable;
 	
+	@JsonProperty("ConstructorTable")
+	private ConstructorTable constructorTable;
+	
     public RaceTable getRaceTable ()
     {
         return raceTable;
@@ -41,6 +44,16 @@ public class MRData {
     public void setCircuitTable (CircuitTable circuitTable)
     {
         this.circuitTable = circuitTable;
+    }
+    
+    public ConstructorTable getConstructorTable ()
+    {
+        return constructorTable;
+    }
+
+    public void setConstructorTable (ConstructorTable constructorTable)
+    {
+        this.constructorTable = constructorTable;
     }
 
 }

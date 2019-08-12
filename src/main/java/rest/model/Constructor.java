@@ -18,8 +18,6 @@ public class Constructor  implements Serializable {
 
     private String constructorId;
 
-    private String url;
-
     public String getNationality ()
     {
         return nationality;
@@ -50,19 +48,9 @@ public class Constructor  implements Serializable {
         this.constructorId = constructorId;
     }
 
-    public String getUrl ()
-    {
-        return url;
-    }
-
-    public void setUrl (String url)
-    {
-        this.url = url;
-    }
-
     @Override
     public String toString()
     {
-        return "[nationality = "+nationality+", name = "+name+", constructorId = "+constructorId+", url = "+url+"]";
+        return "[nationality = "+nationality+", name = "+name+", constructorId = "+constructorId+"]";
     }
 }
