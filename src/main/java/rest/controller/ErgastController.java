@@ -72,7 +72,7 @@ public abstract class ErgastController<T> {
 		
     	ResponseEntity<T> response = null;
     	if(season == null){
-    		season = String.valueOf(Calendar.getInstance().get(Calendar.YEAR) - 1900);
+    		season = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
     	}
     	if(round == null){
     		round = ROUNDS[1];
