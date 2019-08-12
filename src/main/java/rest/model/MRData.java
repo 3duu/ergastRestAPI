@@ -8,11 +8,13 @@ public class MRData {
 	
 	@JsonProperty("RaceTable")
 	private RaceTable raceTable;
- 
-    private String total;
-
-    private String series;
-
+	
+	@JsonProperty("DriverTable")
+	private DriverTable driverTable;
+	
+	@JsonProperty("CircuitTable")
+	private CircuitTable circuitTable;
+	
     public RaceTable getRaceTable ()
     {
         return raceTable;
@@ -22,29 +24,23 @@ public class MRData {
     {
         this.raceTable = raceTable;
     }
+    
+    public DriverTable getDriverTable() {
+		return driverTable;
+	}
 
-    public String getTotal () {
-        return total;
-    }
-
-    public void setTotal (String total)
+	public void setDriverTable(DriverTable driverTable) {
+		this.driverTable = driverTable;
+	}
+	
+	public CircuitTable getCircuitTable ()
     {
-        this.total = total;
+        return circuitTable;
     }
 
-    public String getSeries ()
+    public void setCircuitTable (CircuitTable circuitTable)
     {
-        return series;
+        this.circuitTable = circuitTable;
     }
 
-    public void setSeries (String series)
-    {
-        this.series = series;
-    }
-
-    @Override
-    public String toString()
-    {
-        return "[RaceTable = "+raceTable.toString()+", series = "+series+", total = "+total+"]";
-    }
 }
