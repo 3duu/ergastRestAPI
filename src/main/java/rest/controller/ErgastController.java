@@ -68,7 +68,7 @@ public abstract class ErgastController<T> {
 	}
 	
 	@GetMapping(value="/", produces=MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<T> service(@RequestParam(value=SEASON, required=false) String season, @RequestParam(value=ROUND, required=false) String round) {
+    public ResponseEntity<T> get(@RequestParam(value=SEASON, required=false) String season, @RequestParam(value=ROUND, required=false) String round) {
 		
     	ResponseEntity<T> response = null;
     	if(season == null){
@@ -112,7 +112,7 @@ public abstract class ErgastController<T> {
 	
 	protected boolean validateRound(String round) {
 		
-		if(!StringUtils.isEmpty(round) && StringUtils.isNumeric(round) || Arrays.asList(ROUNDS).contains(round)) {
+		if(!StringUtils.isEmpty(round) && Arrays.asList(ROUNDS).contains(round)) {
 			return true;
 		}
 		else {
